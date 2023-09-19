@@ -1,0 +1,10 @@
+federation_version: 2
+subgraphs:
+  locations:
+    routing_url: http://127.0.0.1:4000
+    schema:
+      subgraph_url: http://127.0.0.1:4000
+  reviews:
+    routing_url: http://127.0.0.1:4000
+    schema:
+      subgraph_url: http://127.0.0.1:4000
