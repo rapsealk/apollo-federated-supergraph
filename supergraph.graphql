@@ -25,6 +25,7 @@ scalar join__FieldSet
 enum join__Graph {
   LOCATIONS @join__graph(name: "locations", url: "http://127.0.0.1:4001")
   REVIEWS @join__graph(name: "reviews", url: "http://127.0.0.1:4002")
+  USERS @join__graph(name: "users", url: "http://127.0.0.1:8080")
 }
 
 scalar link__Import
@@ -85,6 +86,7 @@ type Mutation
 type Query
   @join__type(graph: LOCATIONS)
   @join__type(graph: REVIEWS)
+  @join__type(graph: USERS)
 {
   """
   The full list of locations presented by the Interplanetary Space Tourism department
@@ -96,6 +98,8 @@ type Query
 
   """The three latest reviews submitted for FlyBy's locations"""
   latestReviews: [Review!]! @join__field(graph: REVIEWS)
+  user: User @join__field(graph: USERS)
+  users: [User] @join__field(graph: USERS)
 }
 
 type Review
@@ -127,4 +131,11 @@ type SubmitReviewResponse
 
   """Newly created review"""
   locationReview: Review
+}
+
+type User
+  @join__type(graph: USERS, key: "id")
+{
+  id: ID!
+  username: String
 }
