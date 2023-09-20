@@ -8,3 +8,9 @@ subgraphs:
     routing_url: http://127.0.0.1:4002
     schema:
       subgraph_url: http://127.0.0.1:4002
+  users:
+    routing_url: http://127.0.0.1:8080
+    schema:
+      subgraph_url: http://127.0.0.1:8080
+      # introspection_headers:
+      #   Authorization: Bearer ${env.PEOPLE_AUTH_TOKEN}

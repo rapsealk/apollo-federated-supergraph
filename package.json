@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "compose": "rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql",
+    "compose": "rover supergraph compose --config ./supergraph-config.yaml --output supergraph.graphql",
     "router": "./router --supergraph=supergraph.graphql",
     "router:install": "curl -sSL https://router.apollo.dev/download/nix/latest | sh",
     "start": "yarn run compile && node ./dist/index.js",
