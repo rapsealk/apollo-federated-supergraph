@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
+    "compose": "rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql",
+    "router": "./router --supergraph=supergraph.graphql",
+    "router:install": "curl -sSL https://router.apollo.dev/download/nix/latest | sh",
     "start": "yarn run compile && node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +18,8 @@
   "dependencies": {
     "@apollo/server": "^4.9.3",
     "@apollo/subgraph": "^2.5.5",
-    "graphql": "^16.8.0"
+    "graphql": "^16.8.0",
+    "graphql-tag": "^2.12.6"
   },
   "devDependencies": {
     "@apollo/rover": "^0.18.1",
