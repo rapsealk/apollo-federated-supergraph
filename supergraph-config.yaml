@@ -9,8 +9,8 @@ subgraphs:
     schema:
       subgraph_url: http://127.0.0.1:4002
   users:
-    routing_url: http://127.0.0.1:8080
+    routing_url: http://127.0.0.1:8080/graphql/
     schema:
-      subgraph_url: http://127.0.0.1:8080
+      subgraph_url: http://127.0.0.1:8080/graphql/
       # introspection_headers:
       #   Authorization: Bearer ${env.PEOPLE_AUTH_TOKEN}

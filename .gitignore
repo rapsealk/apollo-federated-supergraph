@@ -1,9 +1,5 @@
 node_modules/
 dist/
 
-# Python
-venv/
-__pycache__/
-
 # Apollo Router (binary)
 router
